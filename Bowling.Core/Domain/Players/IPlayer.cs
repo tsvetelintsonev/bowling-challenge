@@ -7,6 +7,7 @@ namespace Bowling.Core.Domain.Players
     {
         ILane Lane { get; }
         string Name { get; }
+        IFrame CurrentFrame { get; set; }
 
         void PlayFrame(IFrame frame);
     }
