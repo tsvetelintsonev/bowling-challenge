@@ -16,7 +16,7 @@ namespace Bowling.ConsoleScoreBoard
             IEventDrivenBowlingGame bowlingGame = new TenPinBowlingGame(new List<string>{ "Henrik", "Jesper" });
 
             bowlingGame.FrameStarted += (object sender, FrameStartedEventArgs e) => Console.WriteLine($"{e.PlayerName} started frame {e.Frame.Id}");
-            bowlingGame.RollEnded += (object sender, RollEndedEventArgs e) => Console.WriteLine($"Roll ended with {e.Roll.KnockedDownPins.Quantity} knocked downed pin(s)");
+            bowlingGame.RollEnded += (object sender, RollEndedEventArgs e) => Console.WriteLine($"Roll ended with {e.Roll.KnockedDownPins.Quantity} knocked down pin(s)");
             bowlingGame.FrameEnded += (object sender, FrameEndedEventArgs e) => {
                 Console.WriteLine($"Frame {e.Frame.Id} ended with total score of {e.Frame.TotalScore} ({e.Frame.MarkType.ToString()})");
                 Console.WriteLine();
@@ -48,6 +48,8 @@ namespace Bowling.ConsoleScoreBoard
             };
 
             bowlingGame.StartAutoPlay();
+
+            Console.ReadLine();
         }
     }
 }
