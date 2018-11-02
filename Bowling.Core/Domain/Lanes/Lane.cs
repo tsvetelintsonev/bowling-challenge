@@ -1,7 +1,7 @@
-﻿using Bowling.Core.Domain.PinFalls;
+﻿using Bowling.Core.Domain.Games;
+using Bowling.Core.Domain.PinFalls;
 using Bowling.Core.Domain.Pins;
 using Bowling.Core.Domain.Rolls;
-using Bowling.Core.Strategies;
 using Bowling.Core.Strategies.RollHandling;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +10,26 @@ namespace Bowling.Core.Domain.Lanes
 {
     public class Lane : ILane
     {
+        private IGameRules _gameRules;
         private IEnumerable<IPin> _pins;
-        private IRollHandlingStrategy _rollHandlingStrategy;
+        private IRollProcessingStrategy _rollHandlingStrategy;
 
-        public Lane(IRollHandlingStrategy rollHandlingStrategy) {
-            CreatePins();
+        public Lane(IGameRules gameRules, IRollProcessingStrategy rollHandlingStrategy) {
+            _gameRules = gameRules;
             _rollHandlingStrategy = rollHandlingStrategy;
+            CreatePins();
         }
 
-        public IEnumerable<IPin> Pins { get; }
+        public IEnumerable<IPin> Pins => _pins;
 
         public void Reset()
         {
             CreatePins();
         }
 
-        public IPinFall HandleRoll(IRoll roll) {
-            IPinFall pinFall = _rollHandlingStrategy.Handle(roll, this);
-            CollectFalledPins(pinFall);
-            return pinFall;
+        public void ProcessRoll(IRoll roll) {
+            _rollHandlingStrategy.Handle(roll, this);
+            CollectFalledPins(roll.KnockedDownPins);
         }
 
         public void CollectFalledPins(IPinFall pinFall)
@@ -42,7 +43,7 @@ namespace Bowling.Core.Domain.Lanes
 
         private void CreatePins() {
             IList<IPin> pins = new List<IPin>();
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < _gameRules.MaxLanePinsQty; i++) {
                 pins.Add(new Pin());
             }
             _pins = pins;

@@ -10,7 +10,7 @@ namespace Bowling.Core.Domain.Lanes
         IEnumerable<IPin> Pins { get; }
 
         void CollectFalledPins(IPinFall pinFall);
-        IPinFall HandleRoll(IRoll roll);
+        void ProcessRoll(IRoll roll);
         void Reset();
     }
 }

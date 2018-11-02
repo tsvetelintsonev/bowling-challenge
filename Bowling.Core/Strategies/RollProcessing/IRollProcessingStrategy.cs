@@ -4,8 +4,8 @@ using Bowling.Core.Domain.Rolls;
 
 namespace Bowling.Core.Strategies.RollHandling
 {
-    public interface IRollHandlingStrategy
+    public interface IRollProcessingStrategy
     {
-        IPinFall Handle(IRoll roll, ILane lane);
+        void Handle(IRoll roll, ILane lane);
     }
 }

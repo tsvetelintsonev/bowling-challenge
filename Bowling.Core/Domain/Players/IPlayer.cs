@@ -1,5 +1,7 @@
 ﻿using Bowling.Core.Domain.Frames;
 using Bowling.Core.Domain.Lanes;
+using Bowling.Core.Domain.Rolls;
+using Bowling.Core.Domain.Scoring;
 
 namespace Bowling.Core.Domain.Players
 {
@@ -7,8 +9,7 @@ namespace Bowling.Core.Domain.Players
     {
         ILane Lane { get; }
         string Name { get; }
-        IFrame CurrentFrame { get; set; }
-
-        void PlayFrame(IFrame frame);
+        IPlayerScoreCard ScoreCard { get; }
+        IRoll DoRoll(IFrame frame, int speed, int spinPower);
     }
 }

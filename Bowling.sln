@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.Core", "Bowling.Core\Bowling.Core.csproj", "{958BF8C3-D45A-4B5C-82CB-410F087F3EB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bowling.Core", "Bowling.Core\Bowling.Core.csproj", "{958BF8C3-D45A-4B5C-82CB-410F087F3EB6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.ConsoleSimulator", "Bowling.ConsoleSimulator\Bowling.ConsoleSimulator.csproj", "{8651DA2A-2A18-4EE5-A051-E37E29E1BECD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bowling.ConsoleScoreBoard", "Bowling.ConsoleScoreBoard\Bowling.ConsoleScoreBoard.csproj", "{DB978337-4347-42FA-8FDC-0D52DAC16FB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{958BF8C3-D45A-4B5C-82CB-410F087F3EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{958BF8C3-D45A-4B5C-82CB-410F087F3EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{958BF8C3-D45A-4B5C-82CB-410F087F3EB6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8651DA2A-2A18-4EE5-A051-E37E29E1BECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8651DA2A-2A18-4EE5-A051-E37E29E1BECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8651DA2A-2A18-4EE5-A051-E37E29E1BECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8651DA2A-2A18-4EE5-A051-E37E29E1BECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB978337-4347-42FA-8FDC-0D52DAC16FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB978337-4347-42FA-8FDC-0D52DAC16FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB978337-4347-42FA-8FDC-0D52DAC16FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB978337-4347-42FA-8FDC-0D52DAC16FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
