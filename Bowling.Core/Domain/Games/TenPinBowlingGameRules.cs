@@ -25,7 +25,7 @@ namespace Bowling.Core.Domain.Games
         public void ProcessRoll(IPlayer player, IFrame frame, IRoll roll)
         {
             if (frame.Rolls.Count() == GetFrameMaxRollsQty(frame))
-                throw new NotAllowedRollException($"No more rolls are allowed for {player.Name} in frame {frame.Id}");
+                throw new RollNotAllowedException($"No more rolls are allowed for {player.Name} in frame {frame.Id}");
             if (IsLastFrame(frame))
                 ProcessLastFrameRoll(player, frame, roll);
             else

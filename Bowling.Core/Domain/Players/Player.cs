@@ -31,7 +31,7 @@ namespace Bowling.Core.Domain.Players
                 _gameRules.ProcessRoll(this, frame, roll);
                 frame.AddRoll(roll);
             }
-            catch (NotAllowedRollException ex) {
+            catch (RollNotAllowedException ex) {
                 // ignore it
             }
 
